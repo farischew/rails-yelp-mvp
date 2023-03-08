@@ -3,7 +3,7 @@
   <h1>List of Restaurants</h1>
 
   <% @restaurants.each do |restaurant| %>
-    <div class="card">
+    <div class="card-body">
       <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
       <p><%= restaurant.category.capitalize %></p>
     </div>
