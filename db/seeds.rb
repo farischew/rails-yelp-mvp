@@ -13,11 +13,17 @@ Restaurant.destroy_all
 puts 'Creating seeds for restaurants...'
 
 10.times do |index|
-  puts "Creating Restaurant number #{index+1}"
-  Restaurant.create!(
+  puts "Creating Restaurant number #{index + 1}"
+  restaurant = Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_name,
     category: %w[chinese italian japanese french belgian].sample,
     phone_number: Faker::PhoneNumber.cell_phone
   )
+  5.times do |review_index|
+    puts "Printing Review #{review_index + 1}"
+    review = Review.new(content: 'This is a test review', rating: 5)
+    review.restaurant = restaurant
+    review.save!
+  end
 end

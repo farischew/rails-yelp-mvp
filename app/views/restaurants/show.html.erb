@@ -9,6 +9,17 @@
     <p><%= @restaurant.phone_number %></p>
   </div>
 
+  <div class="card">
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <%= review.content %>
+        <%= review.rating %>
+      </li>
+    <% end %>
+</ul>
+  </div>
+
   <div>
     <p><%= link_to 'Go back to all restaurants', restaurants_path %></p>
   </div>
