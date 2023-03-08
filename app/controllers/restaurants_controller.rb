@@ -1,11 +1,15 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
 
-  def index;
+  def index
     @restaurants = Restaurant.all
   end
 
   def show; end
+
+  def new
+    @restaurant = Restaurant.new
+  end
 
   private
 
