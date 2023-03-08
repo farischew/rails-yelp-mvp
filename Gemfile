@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Gem for faker
+gem 'faker'
+
 # Gem for simple forms
 gem "simple_form"
 
